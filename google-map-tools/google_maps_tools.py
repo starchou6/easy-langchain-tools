@@ -19,7 +19,7 @@ async def search_restaurants(area: str, cuisine: Optional[str] = None,
     Search for restaurants in a specified area - optimized version to reduce AI processing time
     
     Args:
-        area: Area name, such as "Shibuya", "Shinjuku", "Tokyo"
+        area: Area name, such as "Shibuya", "Shinjuku", "Tokyo", "New York", "London"
         cuisine: Cuisine type, such as "sushi", "ramen", "tempura"
         price_level: Price level range, such as "0-2" (budget), "2-3" (mid-range), "3-4" (high-end)
         rating_min: Minimum rating, such as 4.0
@@ -40,7 +40,7 @@ async def search_restaurants(area: str, cuisine: Optional[str] = None,
         
         # Build search query
         query = f"{cuisine} restaurant" if cuisine else "restaurant"
-        query += f" in {area}, Tokyo"
+        query += f" in {area}"
         
         # Directly call Google Maps API, let API handle filtering
         places = await client.search_places_async(
@@ -99,7 +99,7 @@ async def search_attractions(area: str, attraction_type: Optional[str] = None,
     Search for tourist attractions in a specified area - optimized version
     
     Args:
-        area: Area name, such as "Tokyo", "Shibuya", "Asakusa"
+        area: Area name, such as "Tokyo", "Shibuya", "Asakusa", "New York", "London"
         attraction_type: Attraction type, such as "museum", "temple", "park"
         price_level: Price level range, such as "0-2" (free), "2-3" (paid)
         rating_min: Minimum rating, such as 4.0
@@ -119,7 +119,7 @@ async def search_attractions(area: str, attraction_type: Optional[str] = None,
                 pass
         
         # Build search query
-        query = f"tourist attractions in {area}, Tokyo"
+        query = f"tourist attractions in {area}"
         if attraction_type:
             query += f" {attraction_type}"
         
@@ -178,7 +178,7 @@ async def search_hotels(area: str, hotel_type: Optional[str] = None,
     Search for hotels in a specified area - optimized version to reduce AI processing time
     
     Args:
-        area: Area name, such as "Shibuya", "Shinjuku", "Tokyo"
+        area: Area name, such as "Shibuya", "Shinjuku", "Tokyo", "New York", "London"
         hotel_type: Hotel type, such as "luxury", "budget", "business", "resort"
         price_level: Price level range, such as "0-2" (budget), "2-3" (mid-range), "3-4" (luxury)
         rating_min: Minimum rating, such as 4.0
@@ -198,7 +198,7 @@ async def search_hotels(area: str, hotel_type: Optional[str] = None,
                 pass
         
         # Build search query
-        query = f"hotels in {area}, Tokyo"
+        query = f"hotels in {area}"
         if hotel_type:
             query += f" {hotel_type}"
         
@@ -256,8 +256,8 @@ async def get_directions(origin: str, destination: str, mode: str = 'transit') -
     Get route planning from origin to destination
     
     Args:
-        origin: Starting point, such as "Tokyo Station"
-        destination: Destination, such as "Tokyo Tower"
+        origin: Starting point, such as "Tokyo Station", "New York Penn Station"
+        destination: Destination, such as "Tokyo Tower", "Empire State Building"
         mode: Transportation mode, options: "transit", "driving", "walking", "bicycling"
     
     Returns:
@@ -296,7 +296,7 @@ async def get_location_info(address: str) -> str:
     Get detailed information for an address
     
     Args:
-        address: Address, such as "Tokyo Tower, Tokyo, Japan"
+        address: Address, such as "Tokyo Tower, Tokyo, Japan", "Empire State Building, New York, USA"
     
     Returns:
         Location information JSON string

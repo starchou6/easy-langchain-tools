@@ -1,6 +1,6 @@
 """
-Google Maps API Client for Tokyo Travel Helper
-Provides direct interaction functionality with Google Maps API
+Google Maps API Client
+Provides direct interaction functionality with Google Maps API for location-based services
 """
 
 import googlemaps
