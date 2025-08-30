@@ -1,5 +1,6 @@
-# langchain-tools-native
-A collection of native tools ready to plug directly into LangChain and LangGraph agents.
+# easy-langchain-tools
+A collection of easy-to-use tools ready to plug directly into LangChain and LangGraph agents.
+You can just copy tools that you want to use into your project.
 
 ## Available Tools
 
