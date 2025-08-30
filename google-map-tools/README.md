@@ -42,11 +42,16 @@ GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
 5. Restrict the API key to the specific APIs you need for security
 
 ## Usage
+### Copy files into your project
+
+- `google_maps_tools.py`
+- `google_maps_client.py`
 
 ### Basic Setup
 
 ```python
 # Import Google Maps tools
+# Note: Adjust the import path based on where you placed the files in your project
 from google_maps_tools import get_maps_tools
 
 # Get all available tools
